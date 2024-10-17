@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캔버스 라이브러리 'fabric' 데모</title>
+
+    <!-- <link rel="stylesheet" href="./assets/style.css"> -->
+    <script src="./assets/jquery-3.1.0.js"></script>
+    <script src="./assets/fabric_v5_3_1.min.js"></script>
+    <script src="./assets/script.js"></script>
+</head>
+<body>
+    <header>
+        <h5>캔버스 라이브러리 'fabric' 데모</h5>
+    </header>
+    
+    <main>
+        <section class="labelEditor">
+            <dev class="labelEditor__display">
+                <div class="labelEditor__display--wrapper">
+                    <canvas id="c1"></canvas>
+                </div>
+            </dev>
+            <dev class="labelEditor__editor">
+                <div class="labelEditor__editor--wrapper mb60">
+                    <h2 class="blind">라벨 편집기</h2>
+                    <div class="labelEditor__editor--controls">
+                        <!-- <dl class="fr__form__group">
+                            <dt class="fr__form__label">타입</dt>
+                            <dd class="flex-row-start">
+                                <label class="fr__form__radio">
+                                    <input type="radio" value="B" name="label_type" checked />
+                                    <span class="">텍스트/이미지</span>
+                                </label>
+                                <label class="fr__form__radio ml50">
+                                    <input type="radio" value="T" name="label_type" />
+                                    <span class="">텍스트</span>
+                                </label>
+                            </dd>
+                        </dl> -->
+                        <dl class="fr__form__group">
+                            <dt class="fr__form__label">텍스트</dt>
+                            <dd>
+                                <input type="text" class="fr__form__input devModifyText mb10" placeholder="라벨 텍스트 입력">
+                                <button class="fr__form__button devAddText" style="display: none;">텍스트 추가</button>
+                            </dd>
+                        </dl>
+                        <dl class="fr__form__group">
+                            <dt class="fr__form__label">이미지</dt>
+                            <dd class="devUploadImageWrapper">
+                                <input type="file" class="devUploadImageFile" accept="image/*">
+                                <input type="text" class="fr__form__input devUploadImageText" readonly>
+                                <button class="fr__form__button devUploadImage">이미지 업로드</button>
+                            </dd>
+                        </dl>
+                        <div class="fr__form__group">
+                            <button class="fr__form__button devResetEditor">초기화</button>
+                        </div>
+                    </div>
+                </div>
+            </dev>
+            <div class="labelEditor__submit">
+                <!-- 구매하기 -->
+                <button class="devOrderDirect" style="width: 100%;">이미지 다운로드</button>
+            </div>
+        </section>
+        
+        <div class="devLabelImageSrc" data-type="T" data-src="./assets/images/label_T_0000000010.png"></div>
+        <div class="devLabelImageSrc" data-type="B" data-src="./assets/images/label_B_0000000010.png"></div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* .labelEditor__display--wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    max-width: 720px;
+    padding-bottom: 100%;
+    /* background-color: peachpuff; */
+    margin-bottom: 40px;
+}
+
+.labelEditor__display--wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.labelEditor__editor {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+}
+
+.labelEditor__editor--wrapper {
+    position: relative;
+    padding: 0 46px;
+}
+
+.labelEditor__editor--controls {
+    position: relative;
+}
+
+.labelEditor__editor--controls .fr__form__label {
+    margin-bottom: 10px;
+}
+
+.labelEditor__editor--controls .fr__form__group {
+    margin-bottom: 20px;
+}
+
+.labelEditor__editor--controls .devUploadImageWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.labelEditor__editor--controls .devUploadImageWrapper .devUploadImageFile {
+    display: none;
+    appearance: none;
+}
+
+.labelEditor__editor--controls .devUploadImageWrapper .devUploadImageText {
+    padding-right: 60px;
+    cursor: auto;
+}
+
+.labelEditor__editor--controls .devUploadImageWrapper .devUploadImageText.reset-active {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url(../../images/common/icons/ic_delete_G.png);
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    background-size: 100%;
+    font-size: 0;
+    text-indent: -100%;
+    overflow: hidden;
+}
+
+.labelEditor__editor--controls .devUploadImage {
+    width: 40%;
+    background-color: #5465FF;
+    border-color: transparent;
+    color: #fff;
+}
+
+.labelEditor__submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    opacity: 0.4;
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    /* height: 130px; */
+    /* max-height: 130px; */
+    font-family: var(--font-gssi);
+    font-size: 32px;
+    color: #fff;
+}
+
+.labelEditor__submit .devOrderDirect {
+    width: 100%;
+    /* height: 100%; */
+    margin: 0 auto;
+    font-size: 32px;
+    font-weight: 800;
+    color: #5465FF;
+} */
