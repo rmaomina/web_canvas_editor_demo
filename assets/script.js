@@ -9,7 +9,7 @@ var devGoodsLabelEditor = {
     canvasConfig: {
         text: '비타 500!!',
         textLimit: 8,
-        imageSrc: '/assets/images/_default.png',
+        imageSrc: null,
         labelSrc: null,
         imageScale: 0.71,
         ratio: 1
@@ -22,6 +22,7 @@ var devGoodsLabelEditor = {
         let self = this;
         $('.devModifyText').val(self.canvasConfig.text).focus();
         self.canvasConfig.labelSrc = $('.devLabelImageSrc').data('src');
+        self.canvasConfig.imageSrc = $('.devLabelDefaultSrc').data('src');
     },
     initCanvas: function() {
         let self = this;
