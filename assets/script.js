@@ -9,7 +9,7 @@ var devGoodsLabelEditor = {
     canvasConfig: {
         text: '비타 500!!',
         textLimit: 8,
-        imageSrc: './assets/images/_default.png',
+        imageSrc: '/assets/images/_default.png',
         labelSrc: null,
         imageScale: 0.71,
         ratio: 1
