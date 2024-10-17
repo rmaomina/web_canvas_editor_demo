@@ -1,6 +1,6 @@
 "use strict";
 
-var devGoodsLabelEditor = {
+var labelEditor = {
     canvas: null,
     canvasObj: {
         text: null,
@@ -30,13 +30,14 @@ var devGoodsLabelEditor = {
         let canvasSize = self.getCanvasSize();
         let screenRatio = self.setDocumentRatio();
 
-        self.canvas = new fabric.Canvas('c1', {
+        const canvas = new fabric.Canvas('c1', {
             width: canvasSize,
             height: canvasSize,
             backgroundColor: 'rgb(230,230,230)',
             selectionColor: 'transparent',
             selectionLineWidth: 2,
         });
+        self.canvas = canvas;
 
         // 1. 사용자 이미지 추가
         fabric.Image.fromURL(self.canvasConfig.imageSrc, function(image) {
@@ -51,7 +52,7 @@ var devGoodsLabelEditor = {
                 selectable: true,
                 cornerColor: '#111',
                 cornerSize: 10 * screenRatio,
-                transparentCorners: false
+                transparentCorners: false,
             });
 
             image.on('selected', function(e) {
@@ -69,53 +70,59 @@ var devGoodsLabelEditor = {
                 }
             });
 
-            self.canvas.add(image);
+            // canvas.add(image);
+            canvas.insertAt(image, 0);
             self.canvasObj.image = image;
-
-            // 2. 레이블 이미지 추가
-            fabric.Image.fromURL(self.canvasConfig.labelSrc, function(label) {
-                label.set({
-                    left: canvasSize / 2,
-                    top: canvasSize / 2,
-                    originX: 'center',
-                    originY: 'center',
-                    scaleX: canvasSize / label.width,
-                    scaleY: canvasSize / label.height,
-                    selectable: false,
-                    evented: false
-                });
-                self.canvas.add(label);
-
-                // 3. 텍스트 오브젝트 추가
-                let initTextObj = new fabric.Text(self.canvasConfig.text, {
-                    left: canvasSize / 2,
-                    top: canvasSize * 0.65,
-                    originX: 'center',
-                    angle: -7,
-                    fontSize: 90 * screenRatio,
-                    fill: '#fff',
-                    stroke: '#ff6600',
-                    strokeWidth: 10 * screenRatio,
-                    strokeUniform: true,
-                    paintFirst: 'stroke',
-                    fontFamily: 'Gothicssi',
-                    fontWeight: '800',
-                    shadow: new fabric.Shadow({
-                        color: 'black',
-                        blur: 2 * screenRatio,
-                        offsetX: 8 * screenRatio,
-                        offsetY: 8 * screenRatio
-                    }),
-                    selectable: false,
-                    editable: false
-                });
-                self.canvas.add(initTextObj);
-                self.canvasObj.text = initTextObj;
-            });
+            // canvas.renderAll();
         });
 
+
+        // 2. 레이블 이미지 추가
+        fabric.Image.fromURL(self.canvasConfig.labelSrc, function(label) {
+            label.set({
+                left: canvasSize / 2,
+                top: canvasSize / 2,
+                originX: 'center',
+                originY: 'center',
+                scaleX: canvasSize / label.width,
+                scaleY: canvasSize / label.height,
+                selectable: false,
+                evented: false,
+            });
+            
+            // canvas.add(label);
+            // canvas.renderAll();
+            canvas.insertAt(label, 1);
+
+            // 3. 텍스트 오브젝트 추가
+            let initTextObj = new fabric.Text(self.canvasConfig.text, {
+                left: canvasSize / 2,
+                top: canvasSize * 0.65,
+                originX: 'center',
+                angle: -7,
+                fontSize: 90 * screenRatio,
+                fill: '#fff',
+                stroke: '#ff6600',
+                strokeWidth: 10 * screenRatio,
+                strokeUniform: true,
+                paintFirst: 'stroke',
+                fontFamily: 'Gothicssi',
+                fontWeight: '800',
+                shadow: new fabric.Shadow({
+                    color: 'black',
+                    blur: 2 * screenRatio,
+                    offsetX: 8 * screenRatio,
+                    offsetY: 8 * screenRatio
+                }),
+                selectable: false,
+                editable: false,
+            });
+    
+            canvas.add(initTextObj);
+            self.canvasObj.text = initTextObj;
+        });
+        
         self.initCanvasEvent();
-        self.canvas.renderAll();
     },
     getCanvasSize: function() {
         return $('.labelEditor__display--wrapper').outerWidth();
@@ -305,5 +312,5 @@ var devGoodsLabelEditor = {
 }
 
 $(function () {
-    devGoodsLabelEditor.run();
+    labelEditor.run();
 });
